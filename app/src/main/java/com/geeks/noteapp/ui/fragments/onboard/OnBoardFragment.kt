@@ -6,11 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.geeks.noteapp.R
 import com.geeks.noteapp.ui.adapters.OnBoardPageAdapter
 import com.geeks.noteapp.databinding.FragmentOnBoardBinding
 import com.geeks.noteapp.models.OnBoardModel
+import com.geeks.noteapp.ui.activity.MainActivity
 
 
 class OnBoardFragment : Fragment() {
@@ -66,6 +68,10 @@ class OnBoardFragment : Fragment() {
                 binding.startBtn.isVisible = position == 2
             }
         })
+
+        binding.startBtn.setOnClickListener {
+            toNotesFragment()
+        }
     }
 
     private fun changeActiveOnboardShower(position : Int) {
@@ -78,6 +84,13 @@ class OnBoardFragment : Fragment() {
                 onBoardShower.setBackgroundResource(R.drawable.onboard_shower_circle)
             }
         }
+    }
+
+    private fun toNotesFragment() {
+        val mainActivity = requireActivity() as MainActivity
+        mainActivity.preference.isFirstVisit = false
+        findNavController().navigate(R.id.action_onboardFragment_to_notesFragment)
+
     }
 
 }
