@@ -8,4 +8,6 @@
     <color name="white_gray">#CFCFCF</color>
     <color name="gray">#C4C4C4</color>
     <color name="middle_gray">#535353</color>
+    <color name="yellow">#FFF599</color>
+    <color name="gray_normal">#434343</color>
 </resources>

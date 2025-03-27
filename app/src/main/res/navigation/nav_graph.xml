@@ -24,5 +24,17 @@
         android:id="@+id/notesFragment"
         android:label="fragment_notes"
         android:name="com.geeks.noteapp.ui.fragments.notes.NotesFragment"
-        tools:layout="@layout/fragment_note"/>
+        tools:layout="@layout/fragment_note">
+
+        <action
+            android:id="@+id/action_notesFragment_to_detailFragment"
+            app:destination="@+id/detailFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.geeks.noteapp.ui.fragments.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail"/>
+
 </navigation>
